@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Ayuda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        h2 {
+            font-weight: bold;
+            color: #34495e;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        a:hover {
+            color: #e74c3c;
+        }
+        .volver {
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        #contenido-dinamico {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #separador {
+            display: none;
+            margin: 20px 0;
+            border: 0;
+            height: 2px;
+            background: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="indice">Índice</h1>
+    <ul>
+        <li><a onclick="mostrarContenido(1)">Sección 1: Organización del contenido</a></li>
+        <li><a onclick="mostrarContenido(2)">Sección 2: Diseño y usabilidad</a></li>
+        <li><a onclick="mostrarContenido(3)">Sección 3: Mantenimiento</a></li>
+        <li><a onclick="mostrarContenido(4)">Sección 4: Accesibilidad</a></li>
+        <li><a onclick="mostrarContenido(5)">Sección 5: Tecnología</a></li>
+    </ul>
+    <hr id="separador">
+    <div id="contenido-dinamico">
+        <h2 id="titulo-seccion"></h2>
+        <p id="texto-seccion"></p>
+        <p class="volver"><a onclick="volverAlMenu()">(Volver al menú)</a></p>
+    </div>
 
+    <script>
+        // URL del archivo de ayudas
+        // Para GitHub Pages:
+        const urlAyudas = 'https://CachoR82.github.io/Ayudas1/ayudas.json';
+        // Para uso local, descomenta la siguiente línea y comenta la anterior:
+        // const urlAyudas = 'ayudas.json';
+
+        // Función para mostrar el contenido de una sección
+        async function mostrarContenido(id) {
+            try {
+                const respuesta = await fetch(urlAyudas);
+                const ayudas = await respuesta.json();
+                const contenedor = document.getElementById('contenido-dinamico');
+                const separador = document.getElementById('separador');
+                const titulo = document.getElementById('titulo-seccion');
+                const texto = document.getElementById('texto-seccion');
+
+                // Actualizar el contenido con los datos del archivo JSON
+                const ayuda = ayudas[id.toString()];
+                if (!ayuda) throw new Error('Sección no encontrada');
+                titulo.textContent = ayuda.titulo;
+                texto.innerHTML = ayuda.texto;
+
+                // Mostrar la sección y el separador
+                contenedor.style.display = 'block';
+                separador.style.display = 'block';
+
+                // Desplazar a la sección
+                contenedor.scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error('Error al cargar las ayudas:', error);
+                alert('No se pudo cargar la información de ayuda. Asegúrate de que el archivo "ayudas.json" esté en la misma carpeta que "index.html" o verifica la conexión si estás usando una URL en línea.');
+            }
+        }
+
+        // Función para volver al menú
+        function volverAlMenu() {
+            const contenedor = document.getElementById('contenido-dinamico');
+            const separador = document.getElementById('separador');
+            contenedor.style.display = 'none';
+            separador.style.display = 'none';
+            document.getElementById('indice').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
