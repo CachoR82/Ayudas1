@@ -1,24 +1,24 @@
-<1>
+<~1>
 Sección 1: Organización del contenido
-El manual debe estar <strong>estructurado lógicamente</strong>, con secciones claras como <span style=\"color: #3498db;\">capítulos</span>, temas y <span style=\"color: #2980b9; text-decoration: underline;\">subtemas</span> para que los enlaces tengan sentido. Considera incluir un <u>índice</u> o una <span style=\"font-size: 1.2em; color: #2ecc71; background-color: #ecf0f1;\">tabla de contenidos</span> con enlaces a las secciones o páginas principales.
-</1>
+El manual debe estar <strong>estructurado lógicamente</strong>, con secciones claras como <span style="color: #3498db;">capítulos</span>, temas y <span style="color: #2980b9; text-decoration: underline;">subtemas</span> para que los enlaces tengan sentido. Considera incluir un <u>índice</u> o una <span style="font-size: 1.2em; color: #2ecc71; background-color: #ecf0f1;">tabla de contenidos</span> con enlaces a las secciones o páginas principales.
+<>
 
-<2>
+<~2>
 Sección 2: Diseño y usabilidad
-Los enlaces deben ser visualmente <span style=\"color: #e74c3c; font-weight: bold;\">distinguibles</span> (<u>subrayados</u>, en otro color, etc.). Asegúrate de que el usuario pueda volver fácilmente al inicio o a la página anterior, por ejemplo, con un <strong>menú de navegación</strong> o un botón <span style=\"font-size: 1.1em; color: #e67e22; text-decoration: underline;\">\"Volver\"</span>. Si el manual es extenso, podrías incluir un sistema de <span style=\"background-color: #f1c40f; color: #2c3e50;\">búsqueda</span> (aunque esto requeriría JavaScript).
-</2>
+Los enlaces deben ser visualmente <span style="color: #e74c3c; font-weight: bold;">distinguibles</span> (<u>subrayados</u>, en otro color, etc.). Asegúrate de que el usuario pueda volver fácilmente al inicio o a la página anterior, por ejemplo, con un <strong>menú de navegación</strong> o un botón <span style="font-size: 1.1em; color: #e67e22; text-decoration: underline;">"Volver"</span>. Si el manual es extenso, podrías incluir un sistema de <span style="background-color: #f1c40f; color: #2c3e50;">búsqueda</span> (aunque esto requeriría JavaScript).
+<>
 
-<3>
+<~3>
 Sección 3: Mantenimiento
-Si cambias el nombre de un archivo o el <code>id</code> de una sección, los enlaces que apunten a ellos <strong>dejarán de funcionar</strong>. Es importante planificar una <span style="color: #8e44ad; font-style: italic;">estructura estable</span> desde el principio. Si el manual crece, considera herramientas para generar <u>índices</u> o <span style=\"font-size: 0.9em; color: #2ecc71; background-color: #ecf0f1;\">mapas del sitio</span> automáticamente.
-</3>
+Si cambias el nombre de un archivo o el <code>id</code> de una sección, los enlaces que apunten a ellos <strong>dejarán de funcionar</strong>. Es importante planificar una <span style="color: #8e44ad; font-style: italic;">estructura estable</span> desde el principio. Si el manual crece, considera herramientas para generar <u>índices</u> o <span style="font-size: 0.9em; color: #2ecc71; background-color: #ecf0f1;">mapas del sitio</span> automáticamente.
+<>
 
-<4>
+<~4>
 Sección 4: Accesibilidad
-Asegúrate de que los enlaces tengan <strong>texto descriptivo</strong> (evita cosas como <span style=\"color: #e74c3c; text-decoration: underline;\">\"clic aquí\"</span>) para que sean claros, especialmente para usuarios con <span style=\"background-color: #d5dbdb; color: #2c3e50;\">lectores de pantalla</span>. Los <code>id</code> y las rutas deben ser <u>significativos</u> y no depender solo de <span style=\"color: #7f8c8d; font-style: italic;\">formato visual</span>.
-</4>
+Asegúrate de que los enlaces tengan <strong>texto descriptivo</strong> (evita cosas como <span style="color: #e74c3c; text-decoration: underline;">"clic aquí"</span>) para que sean claros, especialmente para usuarios con <span style="background-color: #d5dbdb; color: #2c3e50;">lectores de pantalla</span>. Los <code>id</code> y las rutas deben ser <u>significativos</u> y no depender solo de <span style="color: #7f8c8d; font-style: italic;">formato visual</span>.
+<>
 
-<5>
+<~5>
 Sección 5: Tecnología
-Todo lo descrito se puede lograr con <strong>HTML puro</strong>, lo que lo hace ligero y compatible con cualquier navegador. Para mejoras como <span style=\"color: #3498db; text-decoration: underline;\">desplazamiento suave</span>, <span style=\"color: #2980b9;\">menús dinámicos</span>, o <span style=\"font-size: 0.8em; color: #f39c12; background-color: #fef5e7;\">búsqueda</span>, podrías necesitar CSS y JavaScript, pero no son esenciales para la <u>funcionalidad básica</u>.
-</5>
+Todo lo descrito se puede lograr con <strong>HTML puro</strong>, lo que lo hace ligero y compatible con cualquier navegador. Para mejoras como <span style="color: #3498db; text-decoration: underline;">desplazamiento suave</span>, <span style="color: #2980b9;">menús dinámicos</span>, o <span style="font-size: 0.8em; color: #f39c12; background-color: #fef5e7;">búsqueda</span>, podrías necesitar CSS y JavaScript, pero no son esenciales para la <u>funcionalidad básica</u>.
+<>
