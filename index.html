@@ -3,20 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Ayuda con Texto Marcado</title>
+    <title>Manual de Ayuda</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
         }
         h2 {
             font-weight: bold;
+            color: #34495e;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
         }
         a {
-            color: blue;
+            color: #2980b9;
             text-decoration: underline;
             cursor: pointer;
+        }
+        a:hover {
+            color: #e74c3c;
         }
         .volver {
             font-size: 0.9em;
@@ -26,21 +41,28 @@
         #contenido-dinamico {
             display: none;
             margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
         #separador {
             display: none;
             margin: 20px 0;
+            border: 0;
+            height: 2px;
+            background: #3498db;
         }
     </style>
 </head>
 <body>
     <h1 id="indice">Índice</h1>
     <ul>
-        <li><a onclick="mostrarContenido(1)">Sección 1</a></li>
-        <li><a onclick="mostrarContenido(2)">Sección 2</a></li>
-        <li><a onclick="mostrarContenido(3)">Sección 3</a></li>
-        <li><a onclick="mostrarContenido(4)">Sección 4</a></li>
-        <li><a onclick="mostrarContenido(5)">Sección 5</a></li>
+        <li><a onclick="mostrarContenido(1)">Sección 1: Organización del contenido</a></li>
+        <li><a onclick="mostrarContenido(2)">Sección 2: Diseño y usabilidad</a></li>
+        <li><a onclick="mostrarContenido(3)">Sección 3: Mantenimiento</a></li>
+        <li><a onclick="mostrarContenido(4)">Sección 4: Accesibilidad</a></li>
+        <li><a onclick="mostrarContenido(5)">Sección 5: Tecnología</a></li>
     </ul>
     <hr id="separador">
     <div id="contenido-dinamico">
@@ -50,7 +72,7 @@
     </div>
 
     <script>
-        // URL del archivo de texto (ajusta según el uso)
+        // URL del archivo de texto
         const urlAyudas = 'https://CachoR82.github.io/Ayudas1/ayudas.txt';
         // Para uso local, descomenta: const urlAyudas = 'ayudas.txt';
 
