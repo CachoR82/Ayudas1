@@ -25,13 +25,20 @@
         li {
             margin: 10px 0;
         }
-        a {
+        button {
+            background: none;
+            border: none;
             color: #2980b9;
             text-decoration: underline;
             cursor: pointer;
+            font: inherit;
         }
-        a:hover {
+        button:hover {
             color: #e74c3c;
+        }
+        button:focus {
+            outline: 2px solid #2980b9;
+            outline-offset: 2px;
         }
         .volver {
             font-size: 0.9em;
@@ -58,17 +65,17 @@
 <body>
     <h1 id="indice">Índice</h1>
     <ul>
-        <li><a onclick="mostrarContenido(1)">Sección 1: Organización del contenido</a></li>
-        <li><a onclick="mostrarContenido(2)">Sección 2: Diseño y usabilidad</a></li>
-        <li><a onclick="mostrarContenido(3)">Sección 3: Mantenimiento</a></li>
-        <li><a onclick="mostrarContenido(4)">Sección 4: Accesibilidad</a></li>
-        <li><a onclick="mostrarContenido(5)">Sección 5: Tecnología</a></li>
+        <li><button onclick="mostrarContenido(1)">Sección 1: Organización del contenido</button></li>
+        <li><button onclick="mostrarContenido(2)">Sección 2: Diseño y usabilidad</button></li>
+        <li><button onclick="mostrarContenido(3)">Sección 3: Mantenimiento</button></li>
+        <li><button onclick="mostrarContenido(4)">Sección 4: Accesibilidad</button></li>
+        <li><button onclick="mostrarContenido(5)">Sección 5: Tecnología</button></li>
     </ul>
     <hr id="separador">
-    <div id="contenido-dinamico">
+    <div id="contenido-dinamico" aria-live="polite">
         <h2 id="titulo-seccion"></h2>
         <p id="texto-seccion"></p>
-        <p class="volver"><a onclick="volverAlMenu()">(Volver al menú)</a></p>
+        <p class="volver"><button onclick="volverAlMenu()" aria-label="Volver al índice de secciones">Volver al menú</button></p>
     </div>
 
     <script>
@@ -87,9 +94,7 @@
 
                 // Extraer el contenido entre las etiquetas
                 const contenido = texto.substring(inicio + ('<~' + id + '>').length, fin).trim();
-                // Limpiar las barras invertidas
-                const contenidoLimpio = contenido.replace(/\\/g, '');
-                const lineas = contenidoLimpio.split('\n');
+                const lineas = contenido.split('\n');
                 const titulo = document.getElementById('titulo-seccion');
                 const textoSeccion = document.getElementById('texto-seccion');
 
