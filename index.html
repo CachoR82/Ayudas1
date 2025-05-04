@@ -43,7 +43,7 @@
             margin-top: 20px;
             padding: 15px;
             background-color: #fff;
-            border: 1px solid #ddd;
+            border: 1.1px solid #ddd;
             border-radius: 5px;
         }
         #separador {
@@ -73,7 +73,7 @@
 
     <script>
         // URL del archivo de texto
-        const urlAyudas = 'https://cachor82.github.io/Ayudas1/ayudas.txt';
+        const urlAyudas = 'https://CachoR82.github.io/Ayudas1/ayudas.txt';
         // Para uso local, descomenta: const urlAyudas = 'ayudas.txt';
 
         // Función para mostrar el contenido de una sección
@@ -81,12 +81,12 @@
             try {
                 const respuesta = await fetch(urlAyudas);
                 const texto = await respuesta.text();
-                const inicio = texto.indexOf('<~' + id + '>');
-                const fin = texto.indexOf('<>', inicio);
+                const inicio = texto.indexOf('<' + id + '>');
+                const fin = texto.indexOf('</' + id + '>', inicio);
                 if (inicio === -1 || fin === -1) throw new Error('Sección no encontrada');
 
                 // Extraer el contenido entre las etiquetas
-                const contenido = texto.substring(inicio + ('<~' + id + '>').length, fin).trim();
+                const contenido = texto.substring(inicio + ('<' + id + '>').length, fin).trim();
                 // Limpiar las barras invertidas
                 const contenidoLimpio = contenido.replace(/\\/g, '');
                 const lineas = contenidoLimpio.split('\n');
