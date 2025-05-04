@@ -60,7 +60,7 @@
     <ul>
         <li><a onclick="mostrarContenido(1)">Sección 1: Organización del contenido</a></li>
         <li><a onclick="mostrarContenido(2)">Sección 2: Diseño y usabilidad</a></li>
-        <li><a onclick="mostrarContenido(3)">Sección 3: Mantenimiento</a></li>
+        <li><a onclick="mostrarContenido(46)">Sección 3: Mantenimiento</a></li>
         <li><a onclick="mostrarContenido(4)">Sección 4: Accesibilidad</a></li>
         <li><a onclick="mostrarContenido(5)">Sección 5: Tecnología</a></li>
     </ul>
@@ -87,7 +87,9 @@
 
                 // Extraer el contenido entre las etiquetas
                 const contenido = texto.substring(inicio + ('<' + id + '>').length, fin).trim();
-                const lineas = contenido.split('\n');
+                // Limpiar las barras invertidas
+                const contenidoLimpio = contenido.replace(/\\/g, '');
+                const lineas = contenidoLimpio.split('\n');
                 const titulo = document.getElementById('titulo-seccion');
                 const textoSeccion = document.getElementById('texto-seccion');
 
