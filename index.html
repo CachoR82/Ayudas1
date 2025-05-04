@@ -81,7 +81,13 @@
     <script>
         // URL del archivo de texto
         const urlAyudas = 'https://CachoR82.github.io/Ayudas1/ayudas.txt';
+        
         // Para uso local, descomenta: const urlAyudas = 'ayudas.txt';
+        //const urlAyudas = 'ayudas.txt';
+        
+        // Definimos estas dos variables asociadas a los elementos del DOM donde se renderizarán el título y el texto
+        const tituloSeccion = document.getElementById('titulo-seccion');
+        const textoSeccion = document.getElementById('texto-seccion');
 
         // Función para mostrar el contenido de una sección
         async function mostrarContenido(id) {
@@ -95,11 +101,9 @@
                 // Extraer el contenido entre las etiquetas
                 const contenido = texto.substring(inicio + ('<~' + id + '>').length, fin).trim();
                 const lineas = contenido.split('\n');
-                const titulo = document.getElementById('titulo-seccion');
-                const textoSeccion = document.getElementById('texto-seccion');
 
-                // La primera línea es el título, el resto es el texto
-                titulo.textContent = lineas[0].trim();
+                // Usamos las variables para asignar los datos obtenidos del archivo ayudas.txt: la primera línea como título y el resto como texto
+                tituloSeccion.textContent = lineas[0].trim();
                 textoSeccion.innerHTML = lineas.slice(1).join('\n').trim();
 
                 const contenedor = document.getElementById('contenido-dinamico');
