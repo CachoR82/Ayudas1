@@ -15,7 +15,7 @@ Si cambias el nombre de un archivo o el <code>id</code> de una sección, los enl
 
 <4>
 Sección 4: Accesibilidad
-Asegúrate de que los enlaces tengan <strong>texto descriptivo</strong> (evita cosas como <span style="color: #e74c3c; text-decoration: underline;">"clic aquí"</span>) para que sean claros, especialmente para usuarios con <span style="background-color: #d5dbdb; color: #2c3e50;">lectores de pantalla</span>. Los <code>id</code> y las rutas deben ser <u>significativos</u> y no depender solo de <span style="color: #7f8c8d; font-style: italic;">formato visual</span>.
+Asegúrate de que los enlaces tengan <strong>texto descriptivo</strong> (evita cosas como <span style=\"color: #e74c3c; text-decoration: underline;\">\"clic aquí\"</span>) para que sean claros, especialmente para usuarios con <span style=\"background-color: #d5dbdb; color: #2c3e50;\">lectores de pantalla</span>. Los <code>id</code> y las rutas deben ser <u>significativos</u> y no depender solo de <span style=\"color: #7f8c8d; font-style: italic;\">formato visual</span>.
 </4>
 
 <5>
