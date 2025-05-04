@@ -1,0 +1,20 @@
+<1>
+Sección 1: Organización del contenido
+El manual debe incluir un <span style=\"color: blue;\">índice</span> importante.
+
+<2>
+Sección 2: Diseño y usabilidad
+Los enlaces deben ser <span style=\"color: red;\">distinguibles</span>.
+
+<3>
+Sección 3: Mantenimiento
+Planifica una <strong>estructura</strong> estable.
+
+<4>
+Sección 4: Accesibilidad
+Usa <u>textos descriptivos</u>.
+
+<5>
+Sección 5: Tecnología
+Usa <span style=\"font-size: 1.2em;\">HTML</span> puro.
+</5>
