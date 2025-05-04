@@ -1,24 +1,24 @@
 <1>
 Sección 1: Organización del contenido
-El manual debe incluir un <span style=\"color: blue;\">índice</span> importante.
+El manual debe estar <strong>estructurado lógicamente</strong>, con secciones claras (<span style=\"color: blue;\">capítulos</span>, temas, subtemas) para que los enlaces tengan sentido. Considera incluir un <u>índice</u> o <span style=\"font-size: 1.2em; color: green;\">tabla de contenidos</span> con enlaces a las secciones o páginas principales.
 </1>
 
 <2>
 Sección 2: Diseño y usabilidad
-Los enlaces deben ser <span style=\"color: red;\">distinguibles</span>.
+Los enlaces deben ser visualmente <span style=\"color: red;\">distinguibles</span> (<u>subrayados</u>, en otro color, etc.). Asegúrate de que el usuario pueda volver fácilmente al inicio o a la página anterior (por ejemplo, con un <strong>menú de navegación</strong> o un botón <span style=\"font-size: 1.1em; color: #e67e22;\">\"Volver\"</span>). Si el manual es extenso, podrías incluir un sistema de <span style=\"background-color: #f1c40f;\">búsqueda</span> (aunque esto requeriría JavaScript).
 </2>
 
 <3>
 Sección 3: Mantenimiento
-Planifica una <strong>estructura</strong> estable.
+Si cambias el nombre de un archivo o el <code>id</code> de una sección, los enlaces que apunten a ellos <strong>dejarán de funcionar</strong>. Es importante planificar una <span style=\"color: #8e44ad;\">estructura estable</span> desde el principio. Si el manual crece, considera herramientas para generar <u>índices</u> o <span style=\"font-size: 0.9em; color: #2ecc71;\">mapas del sitio</span> automáticamente.
 </3>
 
 <4>
 Sección 4: Accesibilidad
-Usa <u>textos descriptivos</u>.
+Asegúrate de que los enlaces tengan <strong>texto descriptivo</strong> (evita cosas como <span style=\"color: #e74c3c; text-decoration: underline;\">\"clic aquí\"</span>) para que sean claros, especialmente para usuarios con <span style=\"background-color: #ecf0f1;\">lectores de pantalla</span>. Los <code>id</code> y las rutas deben ser <u>significativos</u> y no depender solo de formato visual.
 </4>
 
 <5>
 Sección 5: Tecnología
-Usa <span style=\"font-size: 1.2em;\">HTML</span> puro.
+Todo lo descrito se puede lograr con <strong>HTML puro</strong>, lo que lo hace ligero y compatible con cualquier navegador. Para mejoras (como <span style=\"color: #3498db;\">desplazamiento suave</span>, menús dinámicos, o <span style=\"font-size: 0.8em; color: #f39c12;\">búsqueda</span>), podrías necesitar CSS y JavaScript, pero no son esenciales para la <u>funcionalidad básica</u>.
 </5>
