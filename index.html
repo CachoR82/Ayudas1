@@ -9,57 +9,43 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
-            background-color: #f9f9f9;
-        }
-        h1 {
-            color: #2c3e50;
-        }
+            background-color: #f9f9f9;    }
+        h1 {   color: #2c3e50;     }
         h2 {
             font-weight: bold;
-            color: #34495e;
-        }
+            color: #34495e;   }
         ul {
             list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
+            padding: 0   }
+        li {   margin: 10px 0;   }
         button {
             background: none;
             border: none;
             color: #2980b9;
             text-decoration: underline;
             cursor: pointer;
-            font: inherit;
-        }
-        button:hover {
-            color: #e74c3c;
-        }
+            font: inherit;   }
+        button:hover {   color: #e74c3c;  }
         button:focus {
             outline: 2px solid #2980b9;
-            outline-offset: 2px;
-        }
+            outline-offset: 2px;    }
         .volver {
             font-size: 0.9em;
             margin-top: 10px;
-            display: inline-block;
-        }
+            display: inline-block;   }
         #contenido-dinamico {
             display: none;
             margin-top: 20px;
             padding: 15px;
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+            border-radius: 5px;   }
         #separador {
             display: none;
             margin: 20px 0;
             border: 0;
             height: 2px;
-            background: #3498db;
-        }
+            background: #3498db;  }
     </style>
 </head>
 <body>
@@ -85,9 +71,11 @@
         // Para uso local, descomenta: const urlAyudas = 'ayudas.txt';
         const urlAyudas = 'ayudas.txt';
         
-        // Definimos estas dos variables asociadas a los elementos del DOM donde se renderizarán el título y el texto
+        // Definimos estas cuatro variables asociadas a los elementos del DOM donde se renderizarán el título y el texto
         const tituloSeccion = document.getElementById('titulo-seccion');
         const textoSeccion = document.getElementById('texto-seccion');
+        const contenedor = document.getElementById('contenido-dinamico');
+        const separador = document.getElementById('separador');            
 
         // Función para mostrar el contenido de una sección
         async function mostrarContenido(id) {
@@ -106,25 +94,19 @@
                 tituloSeccion.textContent = lineas[0].trim();
                 textoSeccion.innerHTML = lineas.slice(1).join('\n').trim();
 
-                const contenedor = document.getElementById('contenido-dinamico');
-                const separador = document.getElementById('separador');
                 contenedor.style.display = 'block';
                 separador.style.display = 'block';
-                contenedor.scrollIntoView({ behavior: 'smooth' });
-            } catch (error) {
+                contenedor.scrollIntoView({ behavior: 'smooth' });  } 
+                
+           catch (error) {
                 console.error('Error al cargar las ayudas:', error);
-                alert('No se pudo cargar la información de ayuda. Verifica el archivo o la conexión.');
-            }
-        }
+                alert('No se pudo cargar la información de ayuda. Verifica el archivo o la conexión.');   }     }
 
         // Función para volver al menú
         function volverAlMenu() {
-            const contenedor = document.getElementById('contenido-dinamico');
-            const separador = document.getElementById('separador');
             contenedor.style.display = 'none';
             separador.style.display = 'none';
-            document.getElementById('indice').scrollIntoView({ behavior: 'smooth' });
-        }
+            document.getElementById('indice').scrollIntoView({ behavior: 'smooth' }); }
     </script>
 </body>
 </html>
