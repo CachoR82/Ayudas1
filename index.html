@@ -5,77 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual de Ayuda</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
             line-height: 1.6;
-            background-color: #f9f9f9;    }
-        h1 {   color: #2c3e50;     }
-        h2 {
-            font-weight: bold;
-            color: #34495e;   }
-        ul {
+            background-color: #f9f9f9;
+        }
+
+        /* Contenedor superior (título) */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10vh;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            font-size: 1.5em;
+            color: white;
+        }
+
+        /* Contenedor principal */
+        .main-container {
+            margin-top: 10vh;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Contenedor del medio (lista de botones) */
+        .middle {
+            height: 35vh;
+            background-color: #f0f0f0;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .middle ul {
             list-style-type: none;
-            padding: 0   }
-        li {   margin: 10px 0;   }
-        button {
+            padding: 0;
+        }
+
+        .middle li {
+            margin: 10px 0;
+        }
+
+        .middle button {
             background: none;
             border: none;
             color: #2980b9;
             text-decoration: underline;
             cursor: pointer;
-            font: inherit;   }
-        button:hover {   color: #e74c3c;  }
-        button:focus {
+            font: inherit;
+        }
+
+        .middle button:hover {
+            color: #e74c3c;
+        }
+
+        .middle button:focus {
             outline: 2px solid #2980b9;
-            outline-offset: 2px;    }
-        .volver {
-            font-size: 0.9em;
-            margin-top: 10px;
-            display: inline-block;   }
+            outline-offset: 2px;
+        }
+
+        /* Contenedor inferior (contenido dinámico) */
+        .bottom {
+            height: 55vh;
+            background-color: #e0e0e0;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
         #contenido-dinamico {
             display: none;
             margin-top: 20px;
             padding: 15px;
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 5px;   }
-        #separador {
-            display: none;
-            margin: 20px 0;
-            border: 0;
-            height: 2px;
-            background: #3498db;  }
+            border-radius: 5px;
+        }
+
+        #contenido-dinamico h2 {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .volver {
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .volver button {
+            background: none;
+            border: none;
+            color: #2980b9;
+            text-decoration: underline;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .volver button:hover {
+            color: #e74c3c;
+        }
+
+        .volver button:focus {
+            outline: 2px solid #2980b9;
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
-    <h1 id="indice">Índice</h1>
-    <ul>
-        <li><button onclick="mostrarContenido(1)">Sección 1: Organización del contenido</button></li>
-        <li><button onclick="mostrarContenido(2)">Sección 2: Diseño y usabilidad</button></li>
-        <li><button onclick="mostrarContenido(3)">Sección 3: Mantenimiento</button></li>
-        <li><button onclick="mostrarContenido(4)">Sección 4: Accesibilidad</button></li>
-        <li><button onclick="mostrarContenido(5)">Sección 5: Tecnología</button></li>
-    </ul>
-    <hr id="separador">
-    <div id="contenido-dinamico" aria-live="polite">
-        <h2 id="titulo-seccion"></h2>
-        <p id="texto-seccion"></p>
-        <p class="volver"><button onclick="volverAlMenu()" aria-label="Volver al índice de secciones">Volver al menú</button></p>
+    <div class="header">
+        <h1 id="indice">Índice</h1>
+    </div>
+    <div class="main-container">
+        <div class="middle">
+            <ul>
+                <li><button onclick="mostrarContenido(1)">Sección 1: Organización del contenido</button></li>
+                <li><button onclick="mostrarContenido(2)">Sección 2: Diseño y usabilidad</button></li>
+                <li><button onclick="mostrarContenido(3)">Sección 3: Mantenimiento</button></li>
+                <li><button onclick="mostrarContenido(4)">Sección 4: Accesibilidad</button></li>
+                <li><button onclick="mostrarContenido(5)">Sección 5: Tecnología</button></li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <div id="contenido-dinamico" aria-live="polite">
+                <h2 id="titulo-seccion"></h2>
+                <p id="texto-seccion"></p>
+                <p class="volver"><button onclick="volverAlMenu()" aria-label="Volver al índice">Volver al índice</button></p>
+            </div>
+        </div>
     </div>
 
     <script>
         // URL del archivo de texto
-        //const urlAyudas = 'https://CachoR82.github.io/Ayudas1/ayudas.txt';
-        
-        // Para uso local, descomenta: const urlAyudas = 'ayudas.txt';
         const urlAyudas = 'ayudas.txt';
-        
-        // Definimos estas cuatro variables asociadas a los elementos del DOM donde se renderizarán el título y el texto
+
+        // Definimos estas tres variables asociadas a los elementos del DOM
         const tituloSeccion = document.getElementById('titulo-seccion');
         const textoSeccion = document.getElementById('texto-seccion');
         const contenedor = document.getElementById('contenido-dinamico');
-        const separador = document.getElementById('separador');            
 
         // Función para mostrar el contenido de una sección
         async function mostrarContenido(id) {
@@ -90,23 +171,22 @@
                 const contenido = texto.substring(inicio + ('<~' + id + '>').length, fin).trim();
                 const lineas = contenido.split('\n');
 
-                // Usamos las variables para asignar los datos obtenidos del archivo ayudas.txt: la primera línea como título y el resto como texto
+                // Usamos las variables para asignar los datos obtenidos del archivo ayudas.txt
                 tituloSeccion.textContent = lineas[0].trim();
                 textoSeccion.innerHTML = lineas.slice(1).join('\n').trim();
 
                 contenedor.style.display = 'block';
-                separador.style.display = 'block';
-                contenedor.scrollIntoView({ behavior: 'smooth' });  } 
-                
-           catch (error) {
+                contenedor.scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
                 console.error('Error al cargar las ayudas:', error);
-                alert('No se pudo cargar la información de ayuda. Verifica el archivo o la conexión.');   }     }
+                alert('No se pudo cargar la información de ayuda. Verifica el archivo o la conexión.');
+            }
+        }
 
         // Función para volver al menú
         function volverAlMenu() {
             contenedor.style.display = 'none';
-            separador.style.display = 'none';
-            document.getElementById('indice').scrollIntoView({ behavior: 'smooth' }); }
+        }
     </script>
 </body>
 </html>
